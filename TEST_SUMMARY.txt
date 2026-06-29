@@ -1,0 +1,33 @@
+TESTING SUMMARY REPORT
+======================
+
+1. UNIT & INTEGRATION TESTS
+---------------------------
+We implemented JUnit 5 tests using Mockito to isolate business logic 
+from the database layer.
+
+A. Student Service Tests (StudentServiceTest.java)
+   [PASS] testRegister_Success: Verifies registration works when seats exist.
+   [PASS] testRegister_WhenSectionFull: Verifies registration is blocked at capacity.
+   [PASS] testRegister_WhenDeadlinePassed: Verifies date checks prevent late entry.
+   [PASS] testRegister_WhenMaintenanceOn: Verifies global lock blocks actions.
+   [PASS] testDrop_Success: Verifies students can drop courses.
+
+B. Admin Service Tests (AdminServiceTest.java)
+   [PASS] testCreateStudent_Success: Verifies password hashing and profile creation.
+   [PASS] testDeleteSection_Protection: Verifies sections with enrolled students cannot be deleted.
+
+2. MANUAL ACCEPTANCE CHECKS
+---------------------------
+Per the project brief, the following flows were verified manually:
+
+- [x] Login: Roles redirect to correct dashboards.
+- [x] Security: Instructor cannot grade sections they are not assigned to.
+- [x] Data Integrity: Duplicate enrollments are prevented by DB constraints and Service logic.
+- [x] UI Responsiveness: All database operations run on background threads (SwingWorker).
+- [x] Cloud Connectivity: SSL handshake with TiDB verified.
+
+3. KNOWN ISSUES
+---------------
+- Initial login may take 2-3 seconds due to cloud database latency.
+- "Delete Section" is strictly blocked if students are enrolled (intended behavior).

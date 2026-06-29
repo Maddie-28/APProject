@@ -1,0 +1,44 @@
+UNIVERSITY ERP SYSTEM - SUBMISSION
+=========================================================
+
+1. PREREQUISITES
+----------------
+- Java Development Kit (JDK) 17 or higher.
+- Internet Connection (Required to connect to Cloud Database).
+- Libraries (Included in 'lib' folder):
+  - mysql-connector-j-*.jar (Database)
+  - flatlaf-*.jar (UI Theme)
+  - jbcrypt-*.jar (Password Security)
+
+2. SETUP & DATABASE
+-------------------
+The application connects to a managed TiDB Cloud Database.
+- Host: gateway01.ap-southeast-1.prod.aws.tidbcloud.com
+- Port: 4000
+- SSL: Enabled (Required)
+
+No local database setup is required. The 'DatabaseSeeder.java' class 
+has already populated the cloud database with the required schema and 
+sample data.
+
+3. HOW TO LAUNCH
+----------------
+Run the 'Main.java' class located in 'edu.univ.erp'.
+
+--javac Main.java
+--java Main
+
+4. DEFAULT CREDENTIALS (SAMPLE DATA)
+------------------------------------
+Role        | Username   | Password
+------------|------------|---------
+Admin       | admin      | admin123
+Student     | student1   | pass123
+Student     | student2   | pass123
+Instructor  | inst1      | pass1234
+
+5. KEY FEATURES TO TEST
+-----------------------
+- Login lockout: Enter wrong password 5 times to see account lock.
+- Deadlines: Admin can set deadlines; Student cannot register if passed.
+- Maintenance: Admin toggles maintenance; Student/Instructor blocked.

@@ -1,0 +1,19 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="StudentServiceTest" type="JUnit" factoryName="JUnit">
+    <module name="University ERP System" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="edu.univ.erp.service.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="edu.univ.erp.service" />
+    <option name="MAIN_CLASS_NAME" value="edu.univ.erp.service.StudentServiceTest" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="class" />
+    <option name="VM_PARAMETERS" value="-ea -XX:+EnableDynamicAgentLoading -Xshare:off -Dnet.bytebuddy.experimental=true" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
